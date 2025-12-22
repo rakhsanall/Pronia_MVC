@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\allah\\Source\\Repos\\MVC_App\\MVC_App\\MVC_App.csproj": {}
+    "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\MVC_App.csproj": {}
   },
   "projects": {
-    "C:\\Users\\allah\\Source\\Repos\\MVC_App\\MVC_App\\MVC_App.csproj": {
+    "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\MVC_App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\allah\\Source\\Repos\\MVC_App\\MVC_App\\MVC_App.csproj",
+        "projectUniqueName": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\MVC_App.csproj",
         "projectName": "MVC_App",
-        "projectPath": "C:\\Users\\allah\\Source\\Repos\\MVC_App\\MVC_App\\MVC_App.csproj",
+        "projectPath": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\MVC_App.csproj",
         "packagesPath": "C:\\Users\\allah\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\allah\\Source\\Repos\\MVC_App\\MVC_App\\obj\\",
+        "outputPath": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -59,6 +59,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.22, )"
             }
           },
           "imports": [

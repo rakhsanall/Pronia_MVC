@@ -1,0 +1,26 @@
+﻿@model Service
+
+
+
+    <form method="post" asp-action="Create" asp-controller="Service" style="width: 100%; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
+    <label for="title" asp-for=Title style="display: block; margin-bottom: 8px; font-weight: bold;">Title:</label>
+    <input type="text" id="title" name="title" required style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
+    <span asp-validation-for="Title"></span>
+
+
+    <label for="description" style="display: block; margin-bottom: 8px; font-weight: bold;">Description:</label>
+        <textarea id="description" asp-for=Description required style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+        <span asp-validation-for="Description"></span>
+
+
+    <label for="photourl" style="display: block; margin-bottom: 8px; font-weight: bold;">Photo URL:</label>
+        <input type="text" id="photourl" asp-for=PhotoUrl required style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
+        <span asp-validation-for="PhotoUrl"></span>
+
+
+    <button type="submit" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">Submit</button>
+ 
+        <a asp-action="Index" asp-controller="Service" style="text-decoration:none;text-align:center;color:white;margin:5px 30px;width:170px;background:orangered;border-radius:2px;font-size:20px;padding:5px 12px; cursor:pointer;">Cancel</a>
+</form>
+
+
