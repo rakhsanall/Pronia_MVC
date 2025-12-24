@@ -1,0 +1,44 @@
+﻿@model Product
+
+
+
+<form method="post" asp-action="Update" asp-controller="Product" style="width: 100%; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
+
+    <label for="title" style="display: block; margin-bottom: 8px; font-weight: bold;">Name:</label>
+    <input type="text" asp-for=Name style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
+    <span asp-validation-for="Name"></span>
+
+
+    <label for="description" style="display: block; margin-bottom: 8px; font-weight: bold;">Description:</label>
+    <textarea asp-for=Description style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+    <span asp-validation-for="Description"></span>
+
+    <label for="title" style="display: block; margin-bottom: 8px; font-weight: bold;">Price:</label>
+    <input type="text" asp-for=Price style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
+    <span asp-validation-for="Price"></span>
+
+
+    <label for="photourl" style="display: block; margin-bottom: 8px; font-weight: bold;">Photo URL:</label>
+    <input type="text" asp-for=PhotoUrl style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
+    <span asp-validation-for="PhotoUrl"></span>
+
+    <select asp-for="CategoryId">
+        <option value="null" selected disabled> Choose a category</option>
+        @foreach (Category item in ViewBag.Categories)
+        {
+            <option value="@item.Id">@item.Name</option>
+
+        }
+
+    </select>
+    <span asp-validation-for="CategoryId"></span>
+
+    <div>
+        <button type="submit" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">Submit</button>
+
+        <a asp-action="Index" asp-controller="Product" style="text-decoration:none;text-align:center;color:white;margin:5px 30px;width:170px;background:orangered;border-radius:2px;font-size:20px;padding:5px 12px; cursor:pointer;">Cancel</a>
+
+    </div>
+</form>
+
+

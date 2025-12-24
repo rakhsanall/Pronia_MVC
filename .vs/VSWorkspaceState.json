@@ -4,7 +4,11 @@
     "\\MVC_App",
     "\\MVC_App\\Areas",
     "\\MVC_App\\Areas\\Admin",
-    "\\MVC_App\\Areas\\Admin\\Views"
+    "\\MVC_App\\Areas\\Admin\\Views",
+    "\\MVC_App\\Areas\\Admin\\Views\\Dashboard",
+    "\\MVC_App\\Areas\\Admin\\Views\\Service",
+    "\\MVC_App\\Areas\\Admin\\Views\\Shared",
+    "\\MVC_App\\Models"
   ],
   "SelectedNode": "\\MVC_App\\Program.cs",
   "PreviewInSolutionExplorer": false

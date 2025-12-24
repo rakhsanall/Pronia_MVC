@@ -8,19 +8,20 @@ namespace MVC_App.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [ValidateAntiForgeryToken]
-    public class ServiceController : Controller
+
+    public class CategoryController : Controller
     {
         private readonly AppDbContext _context;
 
-        public ServiceController(AppDbContext context)
+        public CategoryController(AppDbContext context)
         {
             _context = context;
         }
         public async Task<IActionResult> Index()
         {
-            List<Service> services = await _context.Services.ToListAsync();
-            return View(services);
-           
+            List<Category> categories = await _context.Categories.ToListAsync();
+            return View(categories);
+
         }
         [HttpGet]
         public IActionResult Create()
@@ -28,24 +29,25 @@ namespace MVC_App.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(Service service)
+        public async Task<IActionResult> Create(Category category)
         {
-            if (!ModelState.IsValid) {
+            if (!ModelState.IsValid)
+            {
                 return View();
             }
-            await _context.Services.AddAsync(service);
+            await _context.Categories.AddAsync(category);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> Delete(int id)
         {
-            var service = await _context.Services.FindAsync(id);
-            if ( service is null)
+            var category = await _context.Categories.FindAsync(id);
+            if (category is null)
             {
-                return NotFound(); 
+                return NotFound();
             }
-            _context.Services.Remove(service);
+            _context.Categories.Remove(category);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
@@ -53,31 +55,31 @@ namespace MVC_App.Areas.Admin.Controllers
 
         public async Task<IActionResult> Update(int id)
         {
-            Service foundService =await _context.Services.FindAsync(id);
-            if(foundService is not { })
+            Category foundCategory = await _context.Categories.FindAsync(id);
+            if (foundCategory is not { })
             {
                 return NotFound();
             }
-            return View(foundService);
+            return View(foundCategory);
         }
         [HttpPost]
-        public async Task<IActionResult> Update(Service service)
+        public async Task<IActionResult> Update(Category category)
         {
             if (!ModelState.IsValid)
             {
                 return View();
             }
-            var foundService =await _context.Services.FindAsync(service.Id);
-            if (foundService is null) { 
-            return NotFound();
+            var foundCategory = await _context.Categories.FindAsync(category.Id);
+            if (foundCategory is null)
+            {
+                return NotFound();
             }
-            foundService.Title= service.Title;
-            foundService.Description= service.Description;
-            foundService.PhotoUrl= service.PhotoUrl;
-            _context.Services.Update(foundService);
+            foundCategory.Name = category.Name;
+          
+            _context.Categories.Update(foundCategory);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-        
+
         }
     }
 }
