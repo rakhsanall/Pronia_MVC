@@ -3,56 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\views\\shop\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\views\\shop\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\areas\\admin\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\areas\\admin\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\areas\\admin\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\areas\\admin\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\areas\\admin\\views\\service\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\areas\\admin\\views\\service\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\viewmodels\\product\\productcreatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\viewmodels\\product\\productcreatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\areas\\admin\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\areas\\admin\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\areas\\admin\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\areas\\admin\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Migrations\\20251225202805_RateProductAdded.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MVC_App\\Migrations\\20251225202805_RateProductAdded.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\areas\\admin\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\areas\\admin\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\areas\\admin\\views\\service\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\areas\\admin\\views\\service\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Migrations\\20251225191905_IFormFileAdded.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MVC_App\\Migrations\\20251225191905_IFormFileAdded.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\areas\\admin\\views\\category\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\areas\\admin\\views\\category\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\areas\\admin\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\areas\\admin\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\areas\\admin\\views\\service\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\areas\\admin\\views\\service\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|c:\\users\\allah\\onedrive\\desktop\\mvc_app\\mvc_app\\areas\\admin\\views\\product\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9EEAD425-6A52-4B2E-A619-5BC24DAD54E1}|MVC_App\\MVC_App.csproj|solutionrelative:mvc_app\\areas\\admin\\views\\product\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,8 +66,61 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Product\\Create.cshtml",
+              "RelativeDocumentMoniker": "MVC_App\\Areas\\Admin\\Views\\Product\\Create.cshtml",
+              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Product\\Create.cshtml",
+              "RelativeToolTip": "MVC_App\\Areas\\Admin\\Views\\Product\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-25T19:09:48.386Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "MVC_App\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "MVC_App\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T20:40:21.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ShopController.cs",
+              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Controllers\\ShopController.cs",
+              "RelativeDocumentMoniker": "MVC_App\\Controllers\\ShopController.cs",
+              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Controllers\\ShopController.cs",
+              "RelativeToolTip": "MVC_App\\Controllers\\ShopController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T20:40:14.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Views\\Shop\\Index.cshtml",
+              "RelativeDocumentMoniker": "MVC_App\\Views\\Shop\\Index.cshtml",
+              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Views\\Shop\\Index.cshtml",
+              "RelativeToolTip": "MVC_App\\Views\\Shop\\Index.cshtml",
+              "ViewState": "AgIAAAoBAAAAAAAAAAAAABsBAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-25T20:38:13.721Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -74,172 +131,132 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DashboardController.cs",
-              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Controllers\\DashboardController.cs",
-              "RelativeDocumentMoniker": "MVC_App\\Areas\\Admin\\Controllers\\DashboardController.cs",
-              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Controllers\\DashboardController.cs",
-              "RelativeToolTip": "MVC_App\\Areas\\Admin\\Controllers\\DashboardController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "MVC_App\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "MVC_App\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGIAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T20:40:49.981Z",
+              "WhenOpened": "2025-12-25T18:46:42.761Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "MVC_App\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "MVC_App\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAO0AAAA6AAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "MVC_App\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "MVC_App\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAACUAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-24T20:08:16.19Z",
+              "WhenOpened": "2025-12-25T19:12:44.28Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ServiceController.cs",
-              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Controllers\\ServiceController.cs",
-              "RelativeDocumentMoniker": "MVC_App\\Areas\\Admin\\Controllers\\ServiceController.cs",
-              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Controllers\\ServiceController.cs",
-              "RelativeToolTip": "MVC_App\\Areas\\Admin\\Controllers\\ServiceController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "ProductCreateVM.cs",
+              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\ViewModels\\Product\\ProductCreateVM.cs",
+              "RelativeDocumentMoniker": "MVC_App\\ViewModels\\Product\\ProductCreateVM.cs",
+              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\ViewModels\\Product\\ProductCreateVM.cs",
+              "RelativeToolTip": "MVC_App\\ViewModels\\Product\\ProductCreateVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T20:02:08.253Z",
+              "WhenOpened": "2025-12-25T19:01:04.92Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
+              "Title": "20251225202805_RateProductAdded.cs",
+              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Migrations\\20251225202805_RateProductAdded.cs",
+              "RelativeDocumentMoniker": "MVC_App\\Migrations\\20251225202805_RateProductAdded.cs",
+              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Migrations\\20251225202805_RateProductAdded.cs",
+              "RelativeToolTip": "MVC_App\\Migrations\\20251225202805_RateProductAdded.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T20:28:05.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "MVC_App\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Models\\Product.cs",
+              "RelativeToolTip": "MVC_App\\Models\\Product.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAYwBMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T19:02:46.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "20251225191905_IFormFileAdded.cs",
+              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Migrations\\20251225191905_IFormFileAdded.cs",
+              "RelativeDocumentMoniker": "MVC_App\\Migrations\\20251225191905_IFormFileAdded.cs",
+              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Migrations\\20251225191905_IFormFileAdded.cs",
+              "RelativeToolTip": "MVC_App\\Migrations\\20251225191905_IFormFileAdded.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T19:19:06.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "MVC_App\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "MVC_App\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T19:17:41.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Program.cs",
+              "RelativeDocumentMoniker": "MVC_App\\Program.cs",
+              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Program.cs",
+              "RelativeToolTip": "MVC_App\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T19:17:20.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "MVC_App\\Areas\\Admin\\Controllers\\CategoryController.cs",
               "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Controllers\\CategoryController.cs",
               "RelativeToolTip": "MVC_App\\Areas\\Admin\\Controllers\\CategoryController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-24T19:58:54.786Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Product\\Index.cshtml",
-              "RelativeDocumentMoniker": "MVC_App\\Areas\\Admin\\Views\\Product\\Index.cshtml",
-              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Product\\Index.cshtml",
-              "RelativeToolTip": "MVC_App\\Areas\\Admin\\Views\\Product\\Index.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-24T20:33:40.121Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Service\\Index.cshtml",
-              "RelativeDocumentMoniker": "MVC_App\\Areas\\Admin\\Views\\Service\\Index.cshtml",
-              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Service\\Index.cshtml",
-              "RelativeToolTip": "MVC_App\\Areas\\Admin\\Views\\Service\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-24T20:05:07.731Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "MVC_App\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "MVC_App\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T19:59:22.92Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "MVC_App\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "MVC_App\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAANIEAAAAAAAAAAAAAPoEAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-24T20:20:46.051Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Category\\Create.cshtml",
-              "RelativeDocumentMoniker": "MVC_App\\Areas\\Admin\\Views\\Category\\Create.cshtml",
-              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Category\\Create.cshtml",
-              "RelativeToolTip": "MVC_App\\Areas\\Admin\\Views\\Category\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-24T20:07:31.34Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Category\\Index.cshtml",
-              "RelativeDocumentMoniker": "MVC_App\\Areas\\Admin\\Views\\Category\\Index.cshtml",
-              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Category\\Index.cshtml",
-              "RelativeToolTip": "MVC_App\\Areas\\Admin\\Views\\Category\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-24T20:05:01.249Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Service\\Create.cshtml",
-              "RelativeDocumentMoniker": "MVC_App\\Areas\\Admin\\Views\\Service\\Create.cshtml",
-              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Service\\Create.cshtml",
-              "RelativeToolTip": "MVC_App\\Areas\\Admin\\Views\\Service\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-24T20:07:33.533Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Update.cshtml",
-              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Category\\Update.cshtml",
-              "RelativeDocumentMoniker": "MVC_App\\Areas\\Admin\\Views\\Category\\Update.cshtml",
-              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Category\\Update.cshtml",
-              "RelativeToolTip": "MVC_App\\Areas\\Admin\\Views\\Category\\Update.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Product\\Update.cshtml",
+              "RelativeDocumentMoniker": "MVC_App\\Areas\\Admin\\Views\\Product\\Update.cshtml",
+              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Product\\Update.cshtml",
+              "RelativeToolTip": "MVC_App\\Areas\\Admin\\Views\\Product\\Update.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-24T20:05:55.272Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Update.cshtml",
-              "DocumentMoniker": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Service\\Update.cshtml",
-              "RelativeDocumentMoniker": "MVC_App\\Areas\\Admin\\Views\\Service\\Update.cshtml",
-              "ToolTip": "C:\\Users\\allah\\OneDrive\\Desktop\\MVC_App\\MVC_App\\Areas\\Admin\\Views\\Service\\Update.cshtml",
-              "RelativeToolTip": "MVC_App\\Areas\\Admin\\Views\\Service\\Update.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-24T20:05:58.7Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-25T19:12:55.146Z"
             }
           ]
         },

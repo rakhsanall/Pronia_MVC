@@ -10,9 +10,14 @@ namespace MVC_App.Models
         public string Description { get; set; }
         [Precision(5,2)]
         public decimal Price { get; set; }
-        public string PhotoUrl { get; set; }
+    
         [Required]
         public int CategoryId { get; set; }
+
         public Category? Category { get; set; }
+
+        public string? MainImagePath { get; set; }
+        public string? HoverImagePath { get; set; }
+        public int Rate { get; set; }
     }
 }

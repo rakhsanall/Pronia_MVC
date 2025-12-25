@@ -1016,9 +1016,15 @@ wwwroot\assets\images\website-images\2-2-70x78.png
 wwwroot\assets\images\website-images\2-3-70x78.png
 wwwroot\assets\images\website-images\2.png
 wwwroot\assets\images\website-images\3.png
+wwwroot\assets\images\website-images\8f2e246d-380c-49e3-899c-3fa27afc8aceScreenshot 2025-12-20 181126.png
+wwwroot\assets\images\website-images\9e2acee4-e70c-4836-be58-646ecd016652Screenshot 2025-12-20 181126.png
+wwwroot\assets\images\website-images\bc1eac1d-1531-41fe-a0a8-f1abff8d2b55Screenshot 2025-12-17 181135.png
+wwwroot\assets\images\website-images\bd0b0229-6d0e-47af-8d77-9661caf8b4e4Screenshot 2025-12-22 205009.png
 wwwroot\assets\images\website-images\car.png
 wwwroot\assets\images\website-images\card.png
 wwwroot\assets\images\website-images\dark.png
+wwwroot\assets\images\website-images\e239e027-b395-4d6d-bd0a-af5a70a0bcdfphoto_2025-12-20_22-45-18.jpg
+wwwroot\assets\images\website-images\f428a578-287a-4c93-a5ed-0dde9639d927Screenshot 2025-12-20 181126.png
 wwwroot\assets\images\website-images\quotation.png
 wwwroot\assets\images\website-images\service.png
 wwwroot\assets\js\main.js

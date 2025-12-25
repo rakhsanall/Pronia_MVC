@@ -7,7 +7,7 @@ using MVC_App.Models;
 namespace MVC_App.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [ValidateAntiForgeryToken]
+   
 
     public class CategoryController : Controller
     {
