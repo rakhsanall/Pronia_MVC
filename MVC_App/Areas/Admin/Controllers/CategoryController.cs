@@ -5,6 +5,7 @@ using MVC_App.Contexts;
 using MVC_App.Models;
 using MVC_App.ViewModels.Category;
 using MVC_App.ViewModels.Product;
+using MVC_App.ViewModels.Tag;
 
 namespace MVC_App.Areas.Admin.Controllers
 {

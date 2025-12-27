@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using MVC_App.Contexts;
 using MVC_App.Models;
+using MVC_App.ViewModels.Product;
+using MVC_App.ViewModels.Tag;
 
 namespace MVC_App.Areas.Admin.Controllers
 {
@@ -18,7 +20,13 @@ namespace MVC_App.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            List<Tag> tags = await _context.Tags.ToListAsync();
+
+            List<TagGetVM> tags = await _context.Tags .Select(tag=>new TagGetVM()
+                {
+                    Id=tag.Id,
+                    Name=tag.Name
+
+                }).ToListAsync();
             return View(tags);
 
         }
@@ -28,12 +36,17 @@ namespace MVC_App.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(Tag tag)
+        public async Task<IActionResult> Create(TagCreateVM model)
         {
             if (!ModelState.IsValid)
             {
-                return View();
+                return View(model);
             }
+
+            Tag tag = new()
+            {
+                Name = model.Name
+            };
             await _context.Tags.AddAsync(tag);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
@@ -59,21 +72,26 @@ namespace MVC_App.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            return View(foundTag);
+            TagUpdateVM model = new()
+            {
+                Id = id,
+                Name = foundTag.Name
+            };
+            return View(model);
         }
         [HttpPost]
-        public async Task<IActionResult> Update(Tag tag)
+        public async Task<IActionResult> Update(TagUpdateVM model)
         {
             if (!ModelState.IsValid)
             {
-                return View();
+                return View(model);
             }
-            var foundTag = await _context.Tags.FindAsync(tag.Id);
+            var foundTag = await _context.Tags.FindAsync(model.Id);
             if (foundTag is null)
             {
                 return NotFound();
             }
-            foundTag.Name = tag.Name;
+            foundTag.Name = model.Name;
 
             _context.Tags.Update(foundTag);
             await _context.SaveChangesAsync();
