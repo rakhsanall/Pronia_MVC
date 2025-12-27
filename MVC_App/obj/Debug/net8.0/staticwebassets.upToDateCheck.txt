@@ -969,6 +969,7 @@ wwwroot\assets\images\testimonial\icon\quotation.png
 wwwroot\assets\images\testimonial\user\1.png
 wwwroot\assets\images\testimonial\user\2.png
 wwwroot\assets\images\testimonial\user\3.png
+wwwroot\assets\images\website-images\08b7ca34-8c0a-4934-8696-12145976f251Screenshot 2025-12-20 181126.png
 wwwroot\assets\images\website-images\1--1rnu4p.png
 wwwroot\assets\images\website-images\1-1-120x120.webp
 wwwroot\assets\images\website-images\1-1-1820x443.jpg
@@ -1009,6 +1010,7 @@ wwwroot\assets\images\website-images\1-7-270x300.jpg
 wwwroot\assets\images\website-images\1-8-270x300.jpg
 wwwroot\assets\images\website-images\1-9-270x300.jpg
 wwwroot\assets\images\website-images\1.png
+wwwroot\assets\images\website-images\16cf0b61-08a4-4137-98e1-b5d0894eaa01Screenshot 2025-12-20 181126.png
 wwwroot\assets\images\website-images\2-1-370x270.webp
 wwwroot\assets\images\website-images\2-1-70x78.png
 wwwroot\assets\images\website-images\2-2-370x270.webp
@@ -1016,9 +1018,9 @@ wwwroot\assets\images\website-images\2-2-70x78.png
 wwwroot\assets\images\website-images\2-3-70x78.png
 wwwroot\assets\images\website-images\2.png
 wwwroot\assets\images\website-images\3.png
-wwwroot\assets\images\website-images\8f2e246d-380c-49e3-899c-3fa27afc8aceScreenshot 2025-12-20 181126.png
+wwwroot\assets\images\website-images\43b84388-f836-4e87-99e3-898c9b4a96cbScreenshot 2025-12-17 181135.png
+wwwroot\assets\images\website-images\52ef4869-eccd-4855-a99c-3b2f0f199a83Screenshot 2025-12-17 181135.png
 wwwroot\assets\images\website-images\9e2acee4-e70c-4836-be58-646ecd016652Screenshot 2025-12-20 181126.png
-wwwroot\assets\images\website-images\bc1eac1d-1531-41fe-a0a8-f1abff8d2b55Screenshot 2025-12-17 181135.png
 wwwroot\assets\images\website-images\bd0b0229-6d0e-47af-8d77-9661caf8b4e4Screenshot 2025-12-22 205009.png
 wwwroot\assets\images\website-images\car.png
 wwwroot\assets\images\website-images\card.png

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MVC_App.Contexts;
+using MVC_App.Helpers;
 using MVC_App.Models;
 using MVC_App.ViewModels.Product;
 using NuGet.Packaging;
@@ -23,56 +24,116 @@ namespace MVC_App.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            List<Product> products =await _context.Products.Include(x=>x.Category).ToListAsync();
-            return View(products);
+            List<ProductGetVM> productVMs = await _context.Products
+                .Select(product =>new ProductGetVM()
+                {
+                    Id = product.Id,
+                    Name = product.Name,
+                    Description = product.Description,
+                    CategoryName = product.Category.Name,
+                    Price= product.Price,
+                    MainImagePath = product.MainImagePath,
+                    HoverImagePath = product.HoverImagePath,
+                    Rate = product.Rate
+                }).ToListAsync();
+
+
+
+
+
+            //List<ProductGetVM> models = new();
+            //foreach(var product in products)
+            //{
+            //    ProductGetVM model = new()
+            //    {
+            //        Id = product.Id,
+            //        Name = product.Name,
+            //        Description = product.Description,
+            //        CategoryName = product.Category.Name,
+            //        MainImagePath = product.MainImagePath,
+            //Price = product.Price,
+            //        HoverImagePath = product.HoverImagePath,
+            //        Rate=product.Rate
+            //    };
+            //    models.Add(model);
+            //}
+
+
+            return View(productVMs);
         }
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            await SendCategoriesWithViewbagAsync();
+            await SendItemsWithViewbagAsync();
             return View();
         }
 
-        private async Task SendCategoriesWithViewbagAsync()
+        private async Task SendItemsWithViewbagAsync()
         {
             List<Category> categories = await _context.Categories.ToListAsync();
             ViewBag.Categories = categories;
+            var tags = await _context.Tags.ToListAsync();
+            ViewBag.Tags = tags;
         }
+
+        //private async Task SendGenericItemsWithViewBag<T>() where T : class
+        //{
+        //    var items=await _context.Set<T>().ToListAsync();
+        //    ViewBag.Items = items;
+        //}
 
         [HttpPost]
         public async Task<IActionResult> Create(ProductCreateVM model)
         {
             if (!ModelState.IsValid)
             {
-                await SendCategoriesWithViewbagAsync();
+                await SendItemsWithViewbagAsync();
                 return View();
             }
 
             var foundCategory = await _context.Categories.FindAsync(model.CategoryId);
             if (foundCategory is null)
             {
-                await SendCategoriesWithViewbagAsync();
+                await SendItemsWithViewbagAsync();
 
                 ModelState.AddModelError("CategoryId", "bele category yoxdur");
                 return View();
             }
+            foreach(var tagId in model.TagIds)
+            {
+                var existTag = await _context.Tags.AnyAsync(x => x.Id == tagId);
+                if (!existTag)
+                {
+                    ModelState.AddModelError("TagIds", "bele tag yoxdur");
+                    return View(model);
 
-            if (!model.MainImage.ContentType.Contains("Image"))
+                }
+            }
+
+
+            if (!model.MainImage.CheckType())
             {
                 ModelState.AddModelError("MainImage", "Sadece Image tipinde daxil etmek lazimdir.");
+                return View(model);
+
             }
-            if (model.MainImage.Length > 2 * 1024 * 1024)
+            if (!model.MainImage.CheckSize(2))
             {
                 ModelState.AddModelError("MainImage", "Size limit 2 mbdir.");
+                return View(model);
+
 
             }
-            if (!model.HoverImage.ContentType.Contains("Image")){
+            if (!model.HoverImage.CheckType())
+            {
                 ModelState.AddModelError("HoverImage", "Sadece Image tipinde daxil etmek lazimdir.");
+                return View(model);
+
             }
-            if (model.HoverImage.Length > 2 * 1024 * 1024)
+            if (!model.HoverImage.CheckSize(2))
             {
                 ModelState.AddModelError("HoverImage", "Size limit 2 mbdir.");
-
+                return View(model);
             }
 
 
@@ -98,11 +159,20 @@ namespace MVC_App.Areas.Admin.Controllers
                 Price = model.Price,
                 Rate = model.Rate,
                 HoverImagePath=uniqueHoverImageName,
-                MainImagePath=uniqueMainImageName
+                MainImagePath=uniqueMainImageName,
+                ProductTags = []
 
             };
+            foreach (var tagId in model.TagIds)
+            {
+                ProductTag productTag = new()
+                {
+                    TagId = tagId,
+                    Product = product
+                };
+                product.ProductTags.Add(productTag);
+            }
 
-           
 
 
             await _context.Products.AddAsync(product);
@@ -141,48 +211,156 @@ namespace MVC_App.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Update(int id)
         {
-            await SendCategoriesWithViewbagAsync();
+            await SendItemsWithViewbagAsync();
 
-            Product foundProduct = await _context.Products.FindAsync(id);
+            var foundProduct = await _context.Products.Include(x=>x.ProductTags).FirstOrDefaultAsync(x=>x.Id==id);
             if (foundProduct is not { })
             {
                 return NotFound();
             }
-            return View(foundProduct);
+            ProductUpdateVM model=new ProductUpdateVM()
+            {
+                Id = foundProduct.Id,
+                Name= foundProduct.Name,
+                Description= foundProduct.Description,
+                Price= foundProduct.Price,
+                CategoryId= foundProduct.CategoryId,
+                Rate=foundProduct.Rate,
+                MainImagePath=foundProduct.MainImagePath,
+                HoverImagePath=foundProduct.HoverImagePath,
+                TagIds=foundProduct.ProductTags.Select(x=>x.TagId).ToList()
+            };
+            return View(model);
         }
         [HttpPost]
-        public async Task<IActionResult> Update(Product product)
+        public async Task<IActionResult> Update(ProductUpdateVM model)
         {
             if (!ModelState.IsValid)
             {
-                await SendCategoriesWithViewbagAsync();
-
-                return View();
+                await SendItemsWithViewbagAsync();
+                return View(model);
             }
-            var foundCategory = await _context.Categories.FindAsync(product.CategoryId);
 
-            if (foundCategory is null)
+            foreach (var tagId in model.TagIds)
             {
-                await SendCategoriesWithViewbagAsync();
+                var existTag = await _context.Tags.AnyAsync(x => x.Id == tagId);
+                if (!existTag)
+                {
+                    ModelState.AddModelError("TagIds", "bele tag yoxdur");
+                    return View(model);
 
-                ModelState.AddModelError("CategoryId", "bele category yoxdur");
-                return View();
+                }
             }
-            var foundProduct = await _context.Products.FindAsync(product.Id);
+
+            var foundProduct = await _context.Products.Include(x=>x.ProductTags).FirstOrDefaultAsync(x=>x.Id== model.Id);
             if (foundProduct is null)
             {
                 return NotFound();
             }
-            foundProduct.Name = product.Name;
-            foundProduct.Price = product.Price;
-            foundProduct.Description = product.Description;
-            //foundProduct.PhotoUrl = product.PhotoUrl;
-            foundProduct.CategoryId = product.CategoryId;
+
+            var foundCategory = await _context.Categories.FindAsync(model.CategoryId);
+
+            if (foundCategory is null)
+            {
+                await SendItemsWithViewbagAsync();
+
+                ModelState.AddModelError("CategoryId", "bele category yoxdur");
+                return View(model);
+            }
+
+           
+
+            if (!model.MainImage?.CheckType() ?? false)
+            {
+                ModelState.AddModelError("MainImage", "Sadece Image tipinde daxil etmek lazimdir.");
+            }
+            if (!model.MainImage?.CheckSize(2) ?? false)
+            {
+                ModelState.AddModelError("MainImage", "Size limit 2 mbdir.");
+
+            }
+            if (!model.HoverImage?.CheckType() ?? false)
+            {
+                ModelState.AddModelError("HoverImage", "Sadece Image tipinde daxil etmek lazimdir.");
+            }
+            if (!model.HoverImage?.CheckSize(2) ?? false)
+            {
+                ModelState.AddModelError("HoverImage", "Size limit 2 mbdir.");
+
+            }
+
+
+        
+
+
+          
+
+            foundProduct.Name = model.Name;
+            foundProduct.Description = model.Description;
+            foundProduct.Price = model.Price;
+            foundProduct.Rate=model.Rate;
+            foundProduct.CategoryId = model.CategoryId;
+
+            foundProduct.ProductTags = [];
+            foreach(var tagId in model.TagIds)
+            {
+                ProductTag productTag = new()
+                {
+                    TagId = tagId,
+                    ProductId = foundProduct.Id
+                };
+                foundProduct.ProductTags.Add(productTag);
+            }
+
+
+
+            string folderPath = Path.Combine(_environment.WebRootPath, "assets", "images", "website-images");
+
+            if (model.MainImage is { })
+            {
+                string newMainImagePath = await model.MainImage.SaveFileAsync(folderPath);
+                string existMainImagePath = Path.Combine(folderPath, foundProduct.MainImagePath);
+                ExtensionMethods.DeleteFile(existMainImagePath);
+                foundProduct.MainImagePath = newMainImagePath;
+
+            }
+            if (model.HoverImage is { })
+            {
+                string newHoverImagePath = await model.HoverImage.SaveFileAsync(folderPath);
+                string existHoverImagePath = Path.Combine(folderPath, foundProduct.HoverImagePath);
+                ExtensionMethods.DeleteFile(existHoverImagePath);
+                foundProduct.HoverImagePath = newHoverImagePath;
+
+            }
+
             _context.Products.Update(foundProduct);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
 
         }
+        public async Task<IActionResult> Detail(int id)
+        {
+            var product = await _context.Products.Include(x => x.Category)
+                
+                .Select(product=> new ProductGetVM()
+                {
+                    Id = product.Id,
+                    Name = product.Name,
+                    Description = product.Description,
+                    CategoryName = product.Category.Name,
+                    Price = product.Price,
+                    MainImagePath = product.MainImagePath,
+                    HoverImagePath = product.HoverImagePath,
+                    Rate = product.Rate,
+                    TagNames=product.ProductTags.Select(x=>x.Tag.Name).ToList()
+                }).FirstOrDefaultAsync(x => x.Id==id);
+            if (product is null)
+            {
+                return NotFound();
+            }
+            return View(product);
+
+        } 
 
 
 

@@ -1,8 +1,9 @@
-﻿@model Product
+﻿@using MVC_App.ViewModels.Product
+@model ProductUpdateVM
 
 
 
-<form method="post" asp-action="Update" asp-controller="Product" style="width: 100%; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
+<form enctype="multipart/form-data" method="post" asp-action="Update" asp-controller="Product" style="width: 100%; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
 
     <label for="title" style="display: block; margin-bottom: 8px; font-weight: bold;">Name:</label>
     <input type="text" asp-for=Name style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
@@ -17,10 +18,23 @@
     <input type="text" asp-for=Price style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
     <span asp-validation-for="Price"></span>
 
+    <label for="Rate" style="display: block; margin-bottom: 8px; font-weight: bold;">Rate:</label>
+    <input type="number" asp-for=Rate style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
+    <span asp-validation-for="Rate"></span>
 
-    @* <label for="photourl" style="display: block; margin-bottom: 8px; font-weight: bold;">Photo URL:</label>
-    <input type="text" asp-for=PhotoUrl style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
-    <span asp-validation-for="PhotoUrl"></span> *@
+
+    <label for="MainImage" style="display: block; margin-bottom: 8px; font-weight: bold;">MainImage URL:</label>
+    <input type="hidden" asp-for="MainImagePath"/>
+    <img src="~/assets/images/website-images/@Model.MainImagePath" width="50" height="50"/>
+    <input asp-for=MainImage style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
+    <span asp-validation-for="MainImage"></span>
+
+    <label for="HoverImage" style="display: block; margin-bottom: 8px; font-weight: bold;">HoverImage URL:</label>
+    <input type="hidden" asp-for="HoverImagePath" />
+
+    <img src="~/assets/images/website-images/@Model.HoverImagePath" width="50" height="50" />
+    <input asp-for=HoverImage style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
+    <span asp-validation-for="HoverImage"></span>
 
     <select asp-for="CategoryId">
         <option value="null" selected disabled> Choose a category</option>
@@ -31,6 +45,16 @@
         }
 
     </select>
+
+    <select asp-for="TagIds" id="TagIds">
+        @foreach (Tag tag in ViewBag.Tags)
+        {
+            <option value="@tag.Id">@tag.Name</option>
+
+        }
+
+    </select>
+    <span asp-validation-for="TagIds"></span>
     <span asp-validation-for="CategoryId"></span>
 
     <div>

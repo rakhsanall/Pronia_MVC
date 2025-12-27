@@ -1,0 +1,36 @@
+﻿@model List<Tag>
+
+<div style="display:flex;flex-direction:column;width:100%;">
+    <a asp-action="Create" style="text-decoration:none;text-align:center;color:white;margin:20px 30px;width:170px;background:green;border-radius:10px;font-size:20px;padding:5px 12px; cursor:pointer;">Create</a>
+    <table style="width:100%; border-collapse: collapse; text-align: left;">
+
+        <thead>
+            <tr style="background-color: #f2f2f2;">
+                <th style="border: 1px solid #ddd; padding: 8px;">ID</th>
+                <th style="border: 1px solid #ddd; padding: 8px;">Name</th>
+              
+                <th style="border: 1px solid #ddd; padding: 8px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">@item.Id</td>
+                 
+                    <td style="border: 1px solid #ddd; padding: 8px;">@item.Name</td>
+
+                    <td style="border: 1px solid #ddd; padding: 8px;">
+                        <a asp-action="Update" asp-route-id="@item.Id" style="padding:4px 8px; background-color:#4CAF50; color:white; border:none; cursor:pointer;">Update</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" style="padding:4px 8px; background-color:#f44336; color:white; border:none; cursor:pointer;">Delete</a>
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+
+</div>
+

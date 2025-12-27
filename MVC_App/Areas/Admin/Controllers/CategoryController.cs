@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using MVC_App.Contexts;
 using MVC_App.Models;
+using MVC_App.ViewModels.Category;
+using MVC_App.ViewModels.Product;
 
 namespace MVC_App.Areas.Admin.Controllers
 {
@@ -19,8 +21,13 @@ namespace MVC_App.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            List<Category> categories = await _context.Categories.ToListAsync();
-            return View(categories);
+            List<CategoryGetVM> categoryVMs = await _context.Categories
+                .Select(category=> new CategoryGetVM(){
+                    Id = category.Id,
+                    Name = category.Name
+
+            }).ToListAsync();
+            return View(categoryVMs);
 
         }
         [HttpGet]
@@ -29,12 +36,16 @@ namespace MVC_App.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(Category category)
+        public async Task<IActionResult> Create(CategoryCreateVM model)
         {
             if (!ModelState.IsValid)
             {
-                return View();
+                return View(model);
             }
+            Category category = new()
+            {
+                Name = model.Name
+            };
             await _context.Categories.AddAsync(category);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
@@ -60,21 +71,26 @@ namespace MVC_App.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            return View(foundCategory);
+
+            CategoryUpdateVM categroyUpdateVM = new()
+            {
+                Name = foundCategory.Name
+            };
+            return View(categroyUpdateVM);
         }
         [HttpPost]
-        public async Task<IActionResult> Update(Category category)
+        public async Task<IActionResult> Update(CategoryUpdateVM model)
         {
             if (!ModelState.IsValid)
             {
-                return View();
+                return View(model);
             }
-            var foundCategory = await _context.Categories.FindAsync(category.Id);
+            var foundCategory = await _context.Categories.FindAsync(model.Id);
             if (foundCategory is null)
             {
                 return NotFound();
             }
-            foundCategory.Name = category.Name;
+            foundCategory.Name = model.Name;
           
             _context.Categories.Update(foundCategory);
             await _context.SaveChangesAsync();

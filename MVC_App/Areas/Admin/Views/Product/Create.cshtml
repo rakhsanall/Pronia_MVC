@@ -43,6 +43,18 @@
     <span asp-validation-for="CategoryId"></span>
 
 
+
+    <select asp-for="TagIds" id="TagIds">
+        <option value="null" selected disabled> Choose a Tag</option>
+        @foreach (Tag tag in ViewBag.Tags)
+        {
+            <option value="@tag.Id">@tag.Name</option>
+
+        }
+
+    </select>
+    <span asp-validation-for="TagIds"></span>
+
     <div>
         <button type="submit" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">Submit</button>
 
