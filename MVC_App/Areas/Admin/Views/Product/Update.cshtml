@@ -31,10 +31,34 @@
 
     <label for="HoverImage" style="display: block; margin-bottom: 8px; font-weight: bold;">HoverImage URL:</label>
     <input type="hidden" asp-for="HoverImagePath" />
-
     <img src="~/assets/images/website-images/@Model.HoverImagePath" width="50" height="50" />
     <input asp-for=HoverImage style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
     <span asp-validation-for="HoverImage"></span>
+
+
+    
+
+    @for(int i = 0; i < Model.AdditionalImagePaths.Count; i++)
+    {
+        
+        <div class="imageDiv">
+
+
+            <input type="hidden" asp-for="AdditionalImagePaths" value="@Model.AdditionalImagePaths[i]" />
+        <input type="hidden" asp-for="AdditionalImageIds" value="@Model.AdditionalImageIds[i]" />
+
+        <div class="image">
+                <img src="~/assets/images/website-images/@Model.AdditionalImagePaths[i]" width="50" height="50" />
+            <button class="closeButton">delete</button>
+        </div>
+        </div>
+    }
+
+   
+    <label for="Images" style="display: block; margin-bottom: 8px; font-weight: bold;">Images:</label>
+
+    <input asp-for=Images style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
+    <span asp-validation-for="Images"></span>
 
     <select asp-for="CategoryId">
         <option value="null" selected disabled> Choose a category</option>
@@ -66,3 +90,13 @@
 </form>
 
 
+    <script>
+    const closeButtons=document.querySelectorAll(".closeButton");
+    closeButtons.forEach(btn=>{
+        btn.addEventListener("click",(e)=>{
+            e.preventDefault();
+            btn.parentElement.parentElement.remove();
+        })
+    })
+
+    </script>

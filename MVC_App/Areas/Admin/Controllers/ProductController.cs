@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Abstractions;
 using MVC_App.Contexts;
 using MVC_App.Helpers;
 using MVC_App.Models;
@@ -136,21 +137,40 @@ namespace MVC_App.Areas.Admin.Controllers
                 return View(model);
             }
 
+            foreach(var image in model.Images)
+            {
+                if (!image.CheckType())
+                {
+                    ModelState.AddModelError("Images", "Sadece Image tipinde daxil etmek lazimdir.");
+                    return View(model);
 
-            string uniqueMainImageName = Guid.NewGuid().ToString() + model.MainImage.FileName;
-            string mainImagepath=Path.Combine(_environment.WebRootPath, "assets", "images", "website-images",uniqueMainImageName);
+                }
+                if (!image.CheckSize(2))
+                {
+                    ModelState.AddModelError("Images", "Size limit 2 mbdir.");
+                    return View(model);
+                }
+            }
 
-            using FileStream mainStream = new FileStream(mainImagepath, FileMode.Create);
-            await model.MainImage.CopyToAsync(mainStream);
+            string folderPath = Path.Combine(_environment.WebRootPath, "assets", "images", "website-images");
 
-            string uniqueHoverImageName = Guid.NewGuid().ToString() + model.HoverImage.FileName;
-            string hoverImagepath = Path.Combine(_environment.WebRootPath, "assets", "images", "website-images",uniqueHoverImageName);
+            //string uniqueMainImageName = Guid.NewGuid().ToString() + model.MainImage.FileName;
+            //string mainImagepath=Path.Combine(_environment.WebRootPath, "assets", "images", "website-images",uniqueMainImageName);
 
-            using FileStream hoverStream = new FileStream(hoverImagepath, FileMode.Create);
-            await model.HoverImage.CopyToAsync(hoverStream);
+            //using FileStream mainStream = new FileStream(mainImagepath, FileMode.Create);
+            //await model.MainImage.CopyToAsync(mainStream);
 
+            //string uniqueHoverImageName = Guid.NewGuid().ToString() + model.HoverImage.FileName;
+            //string hoverImagepath = Path.Combine(_environment.WebRootPath, "assets", "images", "website-images",uniqueHoverImageName);
 
-        
+            //using FileStream hoverStream = new FileStream(hoverImagepath, FileMode.Create);
+            //await model.HoverImage.CopyToAsync(hoverStream);
+
+            string uniqueMainImageName =await model.MainImage.SaveFileAsync(folderPath);
+            string uniqueHoverImageName= await model.HoverImage.SaveFileAsync(folderPath);
+
+           
+
             Product product = new()
             {
                 Name = model.Name,
@@ -160,9 +180,22 @@ namespace MVC_App.Areas.Admin.Controllers
                 Rate = model.Rate,
                 HoverImagePath=uniqueHoverImageName,
                 MainImagePath=uniqueMainImageName,
-                ProductTags = []
+                ProductTags = [],
+                ProductImages = []
 
             };
+
+            foreach (var image in model.Images)
+            {
+                string uniqueFilePath = await image.SaveFileAsync(folderPath);
+                ProductImage productImage = new()
+                {
+                    ImagePath = uniqueFilePath,
+                    Product = product
+                };
+                product.ProductImages.Add(productImage);
+            }
+
             foreach (var tagId in model.TagIds)
             {
                 ProductTag productTag = new()
@@ -182,7 +215,7 @@ namespace MVC_App.Areas.Admin.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
-            var product = await _context.Products.FindAsync(id);
+            var product = await _context.Products.Include(x=>x.ProductImages).FirstOrDefaultAsync(x=>x.Id==id);
             if (product is null)
             {
                 return NotFound();
@@ -191,17 +224,21 @@ namespace MVC_App.Areas.Admin.Controllers
             await _context.SaveChangesAsync();
            
             string folderPath = Path.Combine(_environment.WebRootPath, "assets", "images", "website-images");
+         
             string mainImagePath=Path.Combine(folderPath,product.MainImagePath);
             string hoverImagePath = Path.Combine(folderPath, product.HoverImagePath);
 
-            if(System.IO.File.Exists(mainImagePath))
-                System.IO.File.Delete(mainImagePath);
+          
+            ExtensionMethods.DeleteFile(mainImagePath);
+            ExtensionMethods.DeleteFile(hoverImagePath);
 
-            if (System.IO.File.Exists(hoverImagePath))
-                System.IO.File.Delete(hoverImagePath);
+            foreach(var productImage in product.ProductImages)
+            {
+                string imagePath = Path.Combine(folderPath, productImage.ImagePath);
+                ExtensionMethods.DeleteFile(imagePath);
 
-            System.IO.File.Delete(mainImagePath);
-            System.IO.File.Delete(hoverImagePath);
+            }
+            
 
 
 
@@ -213,7 +250,7 @@ namespace MVC_App.Areas.Admin.Controllers
         {
             await SendItemsWithViewbagAsync();
 
-            var foundProduct = await _context.Products.Include(x=>x.ProductTags).FirstOrDefaultAsync(x=>x.Id==id);
+            var foundProduct = await _context.Products.Include(x=>x.ProductTags).Include(x=>x.ProductImages).FirstOrDefaultAsync(x=>x.Id==id);
             if (foundProduct is not { })
             {
                 return NotFound();
@@ -228,7 +265,9 @@ namespace MVC_App.Areas.Admin.Controllers
                 Rate=foundProduct.Rate,
                 MainImagePath=foundProduct.MainImagePath,
                 HoverImagePath=foundProduct.HoverImagePath,
-                TagIds=foundProduct.ProductTags.Select(x=>x.TagId).ToList()
+                TagIds=foundProduct.ProductTags.Select(x=>x.TagId).ToList(),
+                AdditionalImagePaths=foundProduct.ProductImages.Select(x=>x.ImagePath).ToList(),
+                AdditionalImageIds=foundProduct.ProductImages.Select(x=>x.Id).ToList(),
             };
             return View(model);
         }
@@ -252,7 +291,7 @@ namespace MVC_App.Areas.Admin.Controllers
                 }
             }
 
-            var foundProduct = await _context.Products.Include(x=>x.ProductTags).FirstOrDefaultAsync(x=>x.Id== model.Id);
+            var foundProduct = await _context.Products.Include(x=>x.ProductTags).Include(x=>x.ProductImages).FirstOrDefaultAsync(x=>x.Id== model.Id);
             if (foundProduct is null)
             {
                 return NotFound();
@@ -289,11 +328,26 @@ namespace MVC_App.Areas.Admin.Controllers
 
             }
 
+            foreach (var image in model.Images?? [])
+            {
+                if (!image.CheckType())
+                {
+                    ModelState.AddModelError("Images", "Sadece Image tipinde daxil etmek lazimdir.");
+                    return View(model);
 
-        
+                }
+                if (!image.CheckSize(2))
+                {
+                    ModelState.AddModelError("Images", "Size limit 2 mbdir.");
+                    return View(model);
+                }
+            }
 
 
-          
+
+
+
+
 
             foundProduct.Name = model.Name;
             foundProduct.Description = model.Description;
@@ -332,6 +386,30 @@ namespace MVC_App.Areas.Admin.Controllers
                 foundProduct.HoverImagePath = newHoverImagePath;
 
             }
+            var existImages=foundProduct.ProductImages.ToList();
+
+
+            foreach(var image in existImages)
+            {
+                var isExistImageId=model.AdditionalImageIds?.Any(x=>x==image.Id)?? false;
+                if (!isExistImageId)
+                {
+                    string deletedPath = Path.Combine(folderPath, image.ImagePath);
+                    ExtensionMethods.DeleteFile(deletedPath); //remove from server
+                    foundProduct.ProductImages.Remove(image); //remove from db
+
+                }
+            }
+            foreach (var image in model.Images)
+            {
+                string uniqueFilePath = await image.SaveFileAsync(folderPath);
+                ProductImage productImage = new()
+                {
+                    ImagePath = uniqueFilePath,
+                    ProductId = foundProduct.Id
+                };
+                foundProduct.ProductImages.Add(productImage);
+            }
 
             _context.Products.Update(foundProduct);
             await _context.SaveChangesAsync();
@@ -352,7 +430,8 @@ namespace MVC_App.Areas.Admin.Controllers
                     MainImagePath = product.MainImagePath,
                     HoverImagePath = product.HoverImagePath,
                     Rate = product.Rate,
-                    TagNames=product.ProductTags.Select(x=>x.Tag.Name).ToList()
+                    TagNames=product.ProductTags.Select(x=>x.Tag.Name).ToList(),
+                    AdditionalImagePaths=product.ProductImages.Select(x=>x.ImagePath).ToList()
                 }).FirstOrDefaultAsync(x => x.Id==id);
             if (product is null)
             {

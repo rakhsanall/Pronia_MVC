@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MVC_App.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace MVC_App.ViewModels.Product
 {
@@ -14,6 +15,8 @@ namespace MVC_App.ViewModels.Product
 
         [Range(1,5,ErrorMessage ="1 ve 5 arasi deyerlendirin")]
         public int Rate { get; set; }
+        public ICollection<IFormFile> Images { get; set; } = [];
+        
 
     }
 }

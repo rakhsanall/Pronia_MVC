@@ -20,6 +20,7 @@ namespace MVC_App.Models
         public string? HoverImagePath { get; set; }
         public int Rate { get; set; }
         public ICollection<ProductTag> ProductTags { get; set; } = [];
+        public ICollection<ProductImage> ProductImages { get; set; } = [];
 
     }
 }

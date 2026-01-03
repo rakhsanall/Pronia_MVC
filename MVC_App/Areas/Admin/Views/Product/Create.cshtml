@@ -31,6 +31,10 @@
     <input  asp-for=HoverImage style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
     <span asp-validation-for="HoverImage"></span>
 
+    <label for="Images" style="display: block; margin-bottom: 8px; font-weight: bold;"> Images URL:</label>
+    <input asp-for=Images style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
+    <span asp-validation-for="Images"></span>
+
     <select asp-for="CategoryId" id="CategoryId">
         <option value="null" selected disabled > Choose a category</option>
         @foreach(Category item in ViewBag.Categories)

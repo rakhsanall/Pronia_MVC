@@ -17,5 +17,10 @@ namespace MVC_App.ViewModels.Product
         public int Rate { get; set; }
         public string? MainImagePath { get; set; }
         public string? HoverImagePath { get; set; }
+        public ICollection<IFormFile>? Images { get; set; } = [];
+        public List<string>? AdditionalImagePaths { get; set; } = [];
+
+        public List<int>? AdditionalImageIds { get; set; } = [];
+
     }
 }
