@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MVC_App.Models;
+using System.Reflection;
 
 namespace MVC_App.Contexts
 {
@@ -9,6 +10,11 @@ namespace MVC_App.Contexts
         public AppDbContext(DbContextOptions options) : base(options)
         {
 
+        }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            base.OnModelCreating(builder);
         }
         public DbSet<Service> Services { get; set; }
         public DbSet<Product> Products { get; set; }

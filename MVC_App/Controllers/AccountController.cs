@@ -7,7 +7,7 @@ using MVC_App.ViewModels.Account;
 
 namespace MVC_App.Controllers
 {
-    public class AccountController(UserManager<AppUser> _userManager,SignInManager<AppUser> _signinManager) : Controller
+    public class AccountController(UserManager<AppUser> _userManager,SignInManager<AppUser> _signinManager,RoleManager<IdentityRole> _roleManager) : Controller
     {
 
       
@@ -65,6 +65,23 @@ namespace MVC_App.Controllers
             return Ok("Ok");
 
         }
+
+        public async Task<IActionResult> CreateRoles()
+        {
+            await _roleManager.CreateAsync(new IdentityRole()
+            {
+                Name = "User"
+            });
+            await _roleManager.CreateAsync(new IdentityRole()
+            {
+                Name = "Admin"
+            });
+            await _roleManager.CreateAsync(new IdentityRole()
+            {
+                Name = "Moderator"
+            });
+            return Ok("Roles Created");
+        }
         
         public async Task<IActionResult> Login()
         {
@@ -81,18 +98,18 @@ namespace MVC_App.Controllers
             if(user is null)
             {
                 ModelState.AddModelError("", "Yalnis email ve ya password");
-               
 
 
+                return View(model);
             }
             var loginResult=await _userManager.CheckPasswordAsync(user,model.Password);
             if (!loginResult)
             {
                 ModelState.AddModelError("", "Yalnis email ve ya password");
              
-
+                return View(model);
             }
-            await _signinManager.SignInAsync(user,false);
+            await _signinManager.SignInAsync(user,model.IsRemember);
             return Ok($"{user.FullName} Salam alekum");
         }
         public async Task<IActionResult> LogOut()
@@ -100,5 +117,7 @@ namespace MVC_App.Controllers
             await _signinManager.SignOutAsync();
             return RedirectToAction(nameof(Login));
         }
+
+
     }
 }
