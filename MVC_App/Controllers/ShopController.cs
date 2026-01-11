@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MVC_App.Abstractions;
 using MVC_App.Contexts;
 using MVC_App.Models;
 using MVC_App.ViewModels.Product;
@@ -9,9 +10,12 @@ namespace MVC_App.Controllers
     public class ShopController : Controller
     {
         private readonly AppDbContext _context;
-        public ShopController(AppDbContext context)
+        private readonly IEmailService _emailService;
+        public ShopController(AppDbContext context,IEmailService emailService)
         {
             _context=context;
+            _emailService = emailService;
+
         }
         public async Task <IActionResult> Index()
         {
@@ -40,6 +44,12 @@ namespace MVC_App.Controllers
                 return NotFound();
             }
             return View(product);
+        }
+
+        public async Task<IActionResult> Test()
+        {
+            await _emailService.SendEmailAsync("reksaneallahverdiyeva4@gmail.com","mpa","email done");
+            return Ok("Ok");
         }
     }
 }

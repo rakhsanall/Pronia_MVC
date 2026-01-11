@@ -1,13 +1,15 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
+using MVC_App.Abstractions;
 using MVC_App.Contexts;
 using MVC_App.Models;
 using MVC_App.ViewModels.Account;
+using System.Threading.Tasks;
 
 namespace MVC_App.Controllers
 {
-    public class AccountController(UserManager<AppUser> _userManager,SignInManager<AppUser> _signinManager,RoleManager<IdentityRole> _roleManager) : Controller
+    public class AccountController(UserManager<AppUser> _userManager,SignInManager<AppUser> _signinManager,RoleManager<IdentityRole> _roleManager,IEmailService _emailService) : Controller
     {
 
       
@@ -61,8 +63,8 @@ namespace MVC_App.Controllers
                 return View();
             }
 
-
-            return Ok("Ok");
+            await SendConfirmationMailAsync(newUser);
+            return RedirectToAction("Login");
 
         }
 
@@ -109,8 +111,16 @@ namespace MVC_App.Controllers
              
                 return View(model);
             }
+
+            if (!user.EmailConfirmed)
+            {
+                ModelState.AddModelError("", "Please confirm your email");
+                await SendConfirmationMailAsync(user);
+                return View(model);
+            }
+
             await _signinManager.SignInAsync(user,model.IsRemember);
-            return Ok($"{user.FullName} Salam alekum");
+            return RedirectToAction("Index", "Home");
         }
         public async Task<IActionResult> LogOut()
         {
@@ -118,6 +128,26 @@ namespace MVC_App.Controllers
             return RedirectToAction(nameof(Login));
         }
 
+        private async Task SendConfirmationMailAsync(AppUser user)
+        {
+           string token= await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            string url = Url.Action("ConfirmEmail", "Account", new { token = token, userId = user.Id }, Request.Scheme);
+            await _emailService.SendEmailAsync(user.Email, "Confirm email", url);
+        }
+        public async Task<IActionResult> ConfirmEmail(string token,string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if(user is null)
+            {
+                return NotFound();
+            }
+            var result = await _userManager.ConfirmEmailAsync(user, token);
+            if (!result.Succeeded)
+            {
+                return BadRequest();
+            }
+            return RedirectToAction("Index","Home");
+        }
 
     }
 }
